@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Mvc;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -23,19 +26,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-public class Song
-{
-    public int songId { get; set; }
-    public string songTitle { get; set; }
-    public string Artist { get; set; }
-    public string Album { get; set; }
-
-}
-public class Playlist
-{
-    public int idPlaylist { get; set; }
-    public string playlistTitle { get; set; }
-    public List<Song> Songs { get; set; } = new List<Song>();
-
-}
