@@ -21,14 +21,14 @@ public class MusicController : ControllerBase
     [HttpGet("playlists")]
     public ActionResult<IEnumerable<Playlist>> GetPlaylists()
     {
-        var playlists = _context.Playlists.Include(p => p.Songs).ToList();
+        var playlists = _context.Playlists.Include(p => p.Song).ToList();
         return Ok(playlists);
     }
 
     [HttpGet("playlists/{id}")]
     public ActionResult<Playlist> GetPlaylistById(int id)
     {
-        var playlist = _context.Playlists.Include(p => p.Songs).FirstOrDefault(p => p.playlistId == id);
+        var playlist = _context.Playlists.Include(p => p.Song).FirstOrDefault(p => p.playlistId == id);
 
         if (playlist == null)
         {
@@ -50,7 +50,7 @@ public class MusicController : ControllerBase
     [HttpPost("playlists/{playlistId}/songs")]
     public ActionResult<Song> AddSongToPlaylist(int playlistId, Song song)
     {
-        var playlist = _context.Playlists.Include(p => p.Songs).FirstOrDefault(p => p.playlistId == playlistId);
+        var playlist = _context.Playlists.Include(p => p.Song).FirstOrDefault(p => p.playlistId == playlistId);
 
         if (playlist == null)
         {

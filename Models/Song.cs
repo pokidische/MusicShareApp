@@ -1,4 +1,5 @@
-﻿namespace MusicShareApp.Models
+﻿
+namespace MusicShareApp.Models
 {
     public class Song
     {
@@ -6,7 +7,6 @@
       public string songTitle { get; set; }
       public string Artist { get; set; }
       public string Album { get; set; }
-      public ICollection<Playlist> Playlists { get; set;} = new List<Playlist>();
-
+      public ICollection<Playlist> Playlists { get; set;};
     }   
 }

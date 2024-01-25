@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fkag6/KIed0qVmDm0Te7t3oPY529fIykgihpu4ly8unA1N5AMprnO7qPwdp4pFLB4Fp+ks7GenT5LyVBLKorgg==",
+  "dgSpecHash": "+88/5JGaWsdsuxHvQgtEIdjdc+qKKVGfsqTYagw9qLRNV/Fp+uDxBoErYBTf0JfQD7K91JoUczaFfvgefaT+MQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\User\\source\\repos\\MusicShareApp\\MusicShareApp\\MusicShareApp.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,7 @@
     "C:\\Users\\User\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.15\\microsoft.entityframeworkcore.design.7.0.15.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.15\\microsoft.entityframeworkcore.relational.7.0.15.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.15\\microsoft.entityframeworkcore.sqlserver.7.0.15.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\7.0.15\\microsoft.entityframeworkcore.tools.7.0.15.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",

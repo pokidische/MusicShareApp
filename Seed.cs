@@ -14,18 +14,15 @@ namespace MusicShareApp
             {
                 if (!dataContext.Playlists.Any())
                 {
-                    var Playlists = new List<Playlist>()
+                var playlists = new List<Playlist>()
                 {
                     new Playlist()
-                        {
-                            Title = "MY PLAYLIST",
-                            Songs = new List<Song>
-                            {
-                                new Song { songTitle = "YOUR" }
-                            }
-                        }
+                    {
+                        Song = new Song()
+                    },
+                    new Playlist {Song = new Song(){ songTitle = "YOURS"}}
                 };
-                    dataContext.Playlists.AddRange(Playlists);
+                    dataContext.Playlists.AddRange(playlists);
                     dataContext.SaveChanges();
                 }
             }
