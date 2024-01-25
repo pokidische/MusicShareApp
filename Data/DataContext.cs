@@ -11,11 +11,14 @@ namespace MusicShareApp.Data
         }
         public DbSet<Playlist> Playlists { get; set; }
         public DbSet<Song > Songs { get; set; }
-        /*protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Playlist>()
-                .HasKey(pc => new { pc.playlistId, pc.songId });
-        }*/
+                .HasKey(pc => new { pc.playlistId, pc.Song.songId });
+            modelBuilder.Entity<Playlist>()
+                .HasOne(s => s.Song)
+                .WithMany(sp => sp.Playlists);
+        }
 
     }
 }
