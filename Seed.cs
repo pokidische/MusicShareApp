@@ -1,11 +1,8 @@
 ﻿using MusicShareApp.Data;
+using MusicShareApp.Models;
 
 namespace MusicShareApp
-{
-    using MusicShareApp.Models;
-
-    namespace PokemonReviewApp
-    {
+{ 
         public class Seed
         {
             private readonly DataContext dataContext;
@@ -33,5 +30,5 @@ namespace MusicShareApp
                 }
             }
         }
-    }
+    
 }
