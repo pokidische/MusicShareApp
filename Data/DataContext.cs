@@ -13,15 +13,18 @@ namespace MusicShareApp.Data
         public DbSet<Playlist> Playlists { get; set; }
         public DbSet<Song> Songs { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        /*protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Playlist>()
-                .HasKey(pc => new { pc.playlistId, pc.Song });
+                .HasKey(ps => new { ps.playlistId, ps.songId });
 
             modelBuilder.Entity<Playlist>()
                 .HasOne(p => p.Song)
-                .WithMany(pc => pc.Playlists)
-                .HasForeignKey(p => p.Song);
-        }
+                .WithMany(ps => ps.Playlists)
+                .HasForeignKey(s => s.songId);
+            modelBuilder.Entity<Playlist>()
+                .HasOne(p => p.Song)
+                .WithOne
+        }*/
     }
 }
