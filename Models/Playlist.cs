@@ -4,9 +4,9 @@ namespace MusicShareApp.Models
 {
     public class Playlist
     {
-        public string playlistId { get; set; }
-        public int  songId { get; set; }
+        public int Id { get; set; }
+        public int SongId { get; set; }
         public string Title { get; set; }
-        public Song Song { get; set; }
+        public virtual List<Song> Songs { get; set; }
     }
 }

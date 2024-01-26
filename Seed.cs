@@ -16,11 +16,7 @@ namespace MusicShareApp
                 {
                 var playlists = new List<Playlist>()
                 {
-                    new Playlist()
-                    {
-                        Song = new Song()
-                    },
-                    new Playlist {Song = new Song(){ songTitle = "YOURS"}}
+                    new Playlist {Songs = new List<Song>() { new Song(){ SongTitle = "YOURS"} }}
                 };
                     dataContext.Playlists.AddRange(playlists);
                     dataContext.SaveChanges();

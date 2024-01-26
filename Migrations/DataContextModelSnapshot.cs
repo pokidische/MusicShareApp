@@ -23,17 +23,20 @@ namespace MusicShareApp.Migrations
 
             modelBuilder.Entity("MusicShareApp.Models.Playlist", b =>
                 {
-                    b.Property<int>("songId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("playlistId")
-                        .HasColumnType("nvarchar(450)");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("SongId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("songId", "playlistId");
+                    b.HasKey("Id");
 
                     b.ToTable("Playlists");
                 });
@@ -54,29 +57,34 @@ namespace MusicShareApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("songTitle")
+                    b.Property<int>("PlaylistId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SongTitle")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("PlaylistId");
+
                     b.ToTable("Songs");
-                });
-
-            modelBuilder.Entity("MusicShareApp.Models.Playlist", b =>
-                {
-                    b.HasOne("MusicShareApp.Models.Song", "Song")
-                        .WithMany("Playlists")
-                        .HasForeignKey("songId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Song");
                 });
 
             modelBuilder.Entity("MusicShareApp.Models.Song", b =>
                 {
-                    b.Navigation("Playlists");
+                    b.HasOne("MusicShareApp.Models.Playlist", "Playlist")
+                        .WithMany("Songs")
+                        .HasForeignKey("PlaylistId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Playlist");
+                });
+
+            modelBuilder.Entity("MusicShareApp.Models.Playlist", b =>
+                {
+                    b.Navigation("Songs");
                 });
 #pragma warning restore 612, 618
         }
