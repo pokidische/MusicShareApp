@@ -9,7 +9,6 @@ namespace MusicShareApp.Data
         {
 
         }
-
         public DbSet<Playlist> Playlist { get; set; }
         public DbSet<Song> Song { get; set; }
 

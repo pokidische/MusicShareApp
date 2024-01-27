@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing.Constraints;
 using MusicShareApp.Data;
 using MusicShareApp.Interfaces;
 using MusicShareApp.Models;
@@ -23,11 +24,20 @@ namespace MusicShareApp.Controllers
         [ProducesResponseType(200, Type = typeof(IEnumerable<Song>))]
         public IActionResult GetSongs()
         {
-            var songs = _songRepository.GetSongs();
+            var GetSongs = _songRepository.GetSongs();
 
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-            return Ok(songs);
+            if (GetSongs == null)
+            {
+                return NotFound();
+            }
+
+            var filePath = Path.Combine("C:/Users/User/Desktop/серьезно/music", "YOUR.mp3");
+
+            var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+
+            return File(fileStream, "audio/mp3");
+
+
         }
     }
 }
