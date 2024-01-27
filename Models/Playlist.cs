@@ -7,6 +7,6 @@ namespace MusicShareApp.Models
         public int Id { get; set; }
         public int SongId { get; set; }
         public string Title { get; set; }
-        public virtual List<Song> Songs { get; set; }
+        public List<Song> PlaylistSongs { get; set; }
     }
 }

@@ -11,7 +11,7 @@ using MusicShareApp.Data;
 namespace MusicShareApp.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240126192329_MusicShareApp")]
+    [Migration("20240127013053_MusicShareApp")]
     partial class MusicShareApp
     {
         /// <inheritdoc />
@@ -41,7 +41,7 @@ namespace MusicShareApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Playlists");
+                    b.ToTable("Playlist");
                 });
 
             modelBuilder.Entity("MusicShareApp.Models.Song", b =>
@@ -71,13 +71,13 @@ namespace MusicShareApp.Migrations
 
                     b.HasIndex("PlaylistId");
 
-                    b.ToTable("Songs");
+                    b.ToTable("Song");
                 });
 
             modelBuilder.Entity("MusicShareApp.Models.Song", b =>
                 {
                     b.HasOne("MusicShareApp.Models.Playlist", "Playlist")
-                        .WithMany("Songs")
+                        .WithMany("PlaylistSongs")
                         .HasForeignKey("PlaylistId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -87,7 +87,7 @@ namespace MusicShareApp.Migrations
 
             modelBuilder.Entity("MusicShareApp.Models.Playlist", b =>
                 {
-                    b.Navigation("Songs");
+                    b.Navigation("PlaylistSongs");
                 });
 #pragma warning restore 612, 618
         }

@@ -8,6 +8,6 @@ namespace MusicShareApp.Models
         public string Artist { get; set; }
         public string Album { get; set; }
         public int PlaylistId { get; set; }
-        public virtual Playlist Playlist { get; set; }
+        public Playlist Playlist { get; set; }
     }
 }
