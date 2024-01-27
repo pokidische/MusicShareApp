@@ -9,6 +9,5 @@ namespace MusicShareApp.Models
         public string Album { get; set; }
         public int PlaylistId { get; set; }
         public Playlist Playlist { get; set; }
-        public string AudioFilePath { get; internal set; }
     }
 }

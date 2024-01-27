@@ -14,7 +14,7 @@ namespace MusicShareApp.Repository
 
         public ICollection<Song> GetSongs() 
         {
-            return _context.Song.OrderBy(x => x.Id).ToList();
+            return _context.Song.OrderBy(p => p.Id).ToList();
         }
     }
 }
