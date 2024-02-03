@@ -37,6 +37,7 @@ namespace MusicShareApp.Controllers
 
             return File(fileStream, "audio/mp3");
         }
+        [HttpPost]
         public IActionResult SetSong(IFormFile file)
         {
             if (file == null || file.Length == 0)
