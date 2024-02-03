@@ -1,5 +1,4 @@
-﻿
-using Microsoft.AspNetCore.Routing.Constraints;
+﻿using Microsoft.AspNetCore.Routing.Constraints;
 
 namespace MusicShareApp.Models
 {
