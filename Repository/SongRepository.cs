@@ -1,24 +1,28 @@
 ﻿using MusicShareApp.Data;
 using MusicShareApp.Interfaces;
 using MusicShareApp.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MusicShareApp.Repository
 {
     public class SongRepository : ISongRepository
     {
         private readonly DataContext _context;
+
         public SongRepository(DataContext context)
         {
-        _context = context;
+            _context = context;
         }
 
-        public ICollection<Song> GetSongs() 
+        public ICollection<Song> GetSong()
         {
-            return _context.Song.OrderBy(p => p.Id).ToList();
+            return _context.Song.ToList();
         }
+
         public ICollection<Song> SetSong()
         {
-            return _context.Song.OrderByDescending(p => p.Id).ToList();
+            throw new NotImplementedException();
         }
     }
 }

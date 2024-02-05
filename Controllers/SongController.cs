@@ -23,11 +23,11 @@ namespace MusicShareApp.Controllers
 
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(IEnumerable<Song>))]
-        public IActionResult GetSongs()
+        public IActionResult GetSong()
         {
-            var GetSongs = _songRepository.GetSongs();
+            var GetSong = _songRepository.GetSong();
 
-            if (GetSongs == null)
+            if (GetSong == null)
             {
                 return NotFound();
             }
